@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-08-14T17:52:29.103Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203" etag="v_0Fce6klEZt9nXTxZh_" version="21.6.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-14T17:52:50.622Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203" etag="QxVyw5G1WQusv8our6j-" version="21.6.8" type="github">
   <diagram name="Página-1" id="YRho2tCiErpQCv4FO0u2">
     <mxGraphModel dx="2062" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -90,7 +90,7 @@
           <mxGeometry x="114" y="300" width="241" height="100" as="geometry" />
         </mxCell>
         <mxCell id="_Bfm6WtnI7c3qEJHPDgw-42" value="Modelo Logico" style="html=1;whiteSpace=wrap;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=19;" parent="1" vertex="1">
-          <mxGeometry x="260" y="550" width="241" height="100" as="geometry" />
+          <mxGeometry x="260" y="535" width="241" height="100" as="geometry" />
         </mxCell>
         <mxCell id="_Bfm6WtnI7c3qEJHPDgw-43" value="Administrador" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;" parent="1" vertex="1">
           <mxGeometry x="-140" y="880" width="180" height="150" as="geometry" />
