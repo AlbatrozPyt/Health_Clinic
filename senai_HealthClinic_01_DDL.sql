@@ -33,7 +33,6 @@ create table Administrador
 	IdAdministrador int primary key identity,
 	IdClinica int foreign key references Clinica(IdClinica) not null,
 	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
-	NomeAdmin varchar(50) not null unique,
 	Senha varchar(20) not null,
 );
 
@@ -42,7 +41,6 @@ create table Medico
 	IdMedico int primary key identity,
 	IdClinica int foreign key references Clinica(IdClinica) not null,
 	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
-	NomeMedico varchar(50) not null,
 	CRM char(6) not null unique,
 	Especializacao varchar(100) not null
 );
@@ -51,7 +49,6 @@ create table Paciente
 (
 	IdPaciente int primary key identity,
 	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
-	NomePaciente varchar(50) not null,
 	Idade int not null,
 	Telefone varchar(9) not null unique,
 	Endereco varchar(100) not null

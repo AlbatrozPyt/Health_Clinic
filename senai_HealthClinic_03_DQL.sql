@@ -1,9 +1,9 @@
 -- DQL
 select 
 	Clinica.NomeFantasia as [Nome Da Clinica],
-	Medico.NomeMedico as [Nome Do Medico],
+	Paciente.Endereco as [Endereco do Paciente],
 	Medico.Especializacao as [Especialização],
-	Paciente.NomePaciente as [Nome do Paciente],
+	Usuario.NomeUsuario as [Nome do Paciente],
 	Paciente.Idade as [Idade do Paciente],
 	Paciente.Telefone as [Telefone do Paciente],
 	Consulta.DataConsulta as [Data da Consulta],
@@ -13,12 +13,13 @@ from Medico
 inner join Clinica on Clinica.IdClinica = Medico.IdClinica
 inner join Consulta on Medico.IdMedico = Consulta.IdConsulta
 inner join Paciente on Paciente.IdPaciente = Consulta.IdPaciente
+inner join Usuario on Usuario.IdUsuario = Medico.IdMedico 
 left join FeedBack on FeedBack.IdConsulta = Consulta.IdConsulta
 
 
 --Criar função para retornar a quantidade de médicos de uma determinada especialidade
 select COUNT(IdMedico) as [Numero de Medicos] from Medico
-where Medico.Especializacao = 'Pediatra'
+where Medico.Especializacao = 'Cardiologista'
 
 --Criar procedure para retornar a idade de um determinado usuário específico
 go
@@ -26,6 +27,9 @@ create procedure BuscaIdade
 @BuscaIdade varchar(20)
 as
 select Paciente.Idade from Paciente
-where @BuscaIdade = Paciente.NomePaciente
+select Usuario.NomeUsuario from Usuario
+where @BuscaIdade = Usuario.NomeUsuario
 
-execute BuscaIdade 'bonamon';
+execute BuscaIdade 'Bona';
+
+drop procedure BuscaIdade

@@ -9,16 +9,16 @@ insert into TiposDeUsuario(NomeTipoDeUsuario)
 values('Administrador'), ('Medico'), ('Paciente')
 
 insert into Usuario(IdTiposDeUsuario, NomeUsuario, Email, Senha)
-values(3, 'Bona', 'bona@email.com', 'bona1234')
+values(2, 'Luis', 'luis@email.com', 'luis899')
 
-insert into Administrador(IdUsuario, IdClinica, NomeAdmin, Senha)
-values(1, 1, 'Ricardo: THE Admin', 'RicardoAdmin')
+insert into Administrador(IdUsuario, IdClinica, Senha)
+values(1, 1, 'RicardoAdmin')
 
-insert into Medico(IdClinica, IdUsuario, NomeMedico, CRM, Especializacao)
-values(1, 7, 'Ronaldo: THE Medic', '788999', 'Cardiologista')
+insert into Medico(IdClinica, IdUsuario, CRM, Especializacao)
+values(1, 2, '788999', 'Cardiologista')
 
-insert into Paciente(IdUsuario, NomePaciente, Idade, Telefone, Endereco)
-values(8, 'bonamon', 47, '987654321', 'Rua Niteroi, 180, São Caetano Do Sul')
+insert into Paciente(IdUsuario, Idade, Telefone, Endereco)
+values(3,  47, '987654321', 'Rua Niteroi, 180, São Caetano Do Sul')
 
 insert into Consulta(IdPaciente, IdMedico, DataConsulta, HoraConsulta)
 values(1, 1, '2023-08-17', '17:30:00')
