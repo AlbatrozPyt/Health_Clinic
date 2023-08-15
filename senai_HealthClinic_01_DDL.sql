@@ -22,13 +22,17 @@ create table TiposDeUsuario
 create table Usuario
 (
 	IdUsuario int primary key identity,
-	IdTiposDeUsuario int foreign key references TiposDeUsuario(IdTiposDeUsuario) not null unique
+	IdTiposDeUsuario int foreign key references TiposDeUsuario(IdTiposDeUsuario) not null,
+	NomeUsuario varchar(100) not null,
+	Email varchar(50) not null unique,
+	Senha varchar(20) not null
 );
 
 create table Administrador
 (
 	IdAdministrador int primary key identity,
-	IdClinica int foreign key references Clinica(IdClinica) not null unique,
+	IdClinica int foreign key references Clinica(IdClinica) not null,
+	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
 	NomeAdmin varchar(50) not null unique,
 	Senha varchar(20) not null,
 );
@@ -36,7 +40,8 @@ create table Administrador
 create table Medico
 (
 	IdMedico int primary key identity,
-	IdClinica int foreign key references Clinica(IdClinica) not null unique,
+	IdClinica int foreign key references Clinica(IdClinica) not null,
+	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
 	NomeMedico varchar(50) not null,
 	CRM char(6) not null unique,
 	Especializacao varchar(100) not null
@@ -45,6 +50,7 @@ create table Medico
 create table Paciente
 (
 	IdPaciente int primary key identity,
+	IdUsuario int foreign key references Usuario(IdUsuario) not null unique,
 	NomePaciente varchar(50) not null,
 	Idade int not null,
 	Telefone varchar(9) not null unique,
@@ -68,6 +74,7 @@ create table FeedBack
 	Exibe bit not null,
 	Descricao varchar(100) not null
 );
+
 
 -- SELECTs
 select*from Usuario
