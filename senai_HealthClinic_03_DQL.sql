@@ -1,12 +1,14 @@
 -- DQL
+use Health_Clinic_Tarde
 select 
 	Clinica.NomeFantasia as [Nome Da Clinica],
-	Paciente.Endereco as [Endereco do Paciente],
+	Medico.IdMedico as [Id do Médico],
 	Medico.Especializacao as [Especialização],
 	Medico.CRM as [CRM do medico],
 	Usuario.NomeUsuario as [Nome do Paciente],
 	Paciente.Idade as [Idade do Paciente],
 	Paciente.Telefone as [Telefone do Paciente],
+	Paciente.Endereco as [Endereco do Paciente],
 	Consulta.IdConsulta as [Id da Consulta],
 	Consulta.DataConsulta as [Data da Consulta],
 	Consulta.HoraConsulta as [Hora da Consulta],
@@ -15,9 +17,10 @@ from Medico
 inner join Clinica on Clinica.IdClinica = Medico.IdClinica
 inner join Consulta on Medico.IdMedico = Consulta.IdConsulta
 inner join Paciente on Paciente.IdPaciente = Consulta.IdPaciente
-inner join Usuario on Usuario.IdUsuario = Medico.IdMedico 
+inner join Usuario on  Usuario.IdUsuario = Paciente.IdPaciente
 left join FeedBack on FeedBack.IdConsulta = Consulta.IdConsulta
-where Usuario.IdUsuario = Medico.IdMedico
+
+
 
 --Criar função para retornar a quantidade de médicos de uma determinada especialidade
 select COUNT(IdMedico) as [Numero de Medicos] from Medico
