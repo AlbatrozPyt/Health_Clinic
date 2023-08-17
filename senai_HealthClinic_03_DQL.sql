@@ -2,10 +2,10 @@
 use Health_Clinic_Tarde
 select 
 	Clinica.NomeFantasia as [Nome Da Clinica],
-	Medico.IdMedico as [Id do Médico],
+	M.NomeUsuario as [Nome do Médico],
 	Medico.Especializacao as [Especialização],
 	Medico.CRM as [CRM do medico],
-	Usuario.NomeUsuario as [Nome do Paciente],
+	P.NomeUsuario as [Nome do Paciente],
 	Paciente.Idade as [Idade do Paciente],
 	Paciente.Telefone as [Telefone do Paciente],
 	Paciente.Endereco as [Endereco do Paciente],
@@ -17,9 +17,9 @@ from Medico
 inner join Clinica on Clinica.IdClinica = Medico.IdClinica
 inner join Consulta on Medico.IdMedico = Consulta.IdConsulta
 inner join Paciente on Paciente.IdPaciente = Consulta.IdPaciente
-inner join Usuario on  Usuario.IdUsuario = Paciente.IdPaciente
+inner join Usuario M on  Medico.IdUsuario = M.IdUsuario
+inner join Usuario P on Paciente.IdUsuario = P.IdUsuario
 left join FeedBack on FeedBack.IdConsulta = Consulta.IdConsulta
-
 
 
 --Criar função para retornar a quantidade de médicos de uma determinada especialidade
